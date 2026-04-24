@@ -70,22 +70,22 @@ class NeuralNet(nn.Module):
     return x
 
 # Initialize the Model, Loss Function, and Optimizer
-lig=NeuralNet()
-criterion=nn.MSELoss()
-optimizer=optim.RMSprop(lig. parameters(),lr=0.001)
+    lig=NeuralNet()
+    criterion=nn.MSELoss()
+    optimizer=optim.RMSprop(lig. parameters(),lr=0.001)
 
-def train_model(ai_brain, X_train, y_train, criterion, optimizer, epochs=2000):
-    #Include your code here
-    for epoch in range(epochs):
-      optimizer.zero_grad()
-      loss=criterion(ai_brain(X_train),y_train)
-      loss.backward()
-      optimizer.step()
-      ai_brain.history['loss'].append(loss.item())
-      if epoch % 200 == 0:
-        print(f'Epoch [{epoch}/{epochs}], Loss: {loss.item():.6f}')
+    def train_model(ai_brain, X_train, y_train, criterion, optimizer, epochs=2000):
+        #Include your code here
+        for epoch in range(epochs):
+           optimizer.zero_grad()
+           loss=criterion(ai_brain(X_train),y_train)
+           loss.backward()
+           optimizer.step()
+           ai_brain.history['loss'].append(loss.item())
+           if epoch % 200 == 0:
+              print(f'Epoch [{epoch}/{epochs}], Loss: {loss.item():.6f}')
 
-train_model(lig, X_train_tensor, y_train_tensor, criterion, optimizer)
+    train_model(lig, X_train_tensor, y_train_tensor, criterion, optimizer)
 ```
 
 ### Dataset Information
